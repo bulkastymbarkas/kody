@@ -7,7 +7,14 @@
 using namespace std;
 int main(int argc, char **argv)
 {
-	cout << "Witaj w Szczebrzeszynie" ;
+    //char imie;  //deklaracja zmiennej znakowej
+    char imie [10]; //deklaracja tablicy znakowej
+    
+	cout << "Witaj w Szczebrzeszynie" << endl;
+	cout << "Imię: " ;
+    //cin >> imie;
+    cin.getline(imie, 10);
+    cout << "Cześć " << imie << endl;
 	return 0;
 }
 
