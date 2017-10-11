@@ -16,6 +16,8 @@ int main(int argc, char **argv)
     cout << "Działanie" << endl ;
     cout <<"Podaj liczbe a:" << endl ;
     cin >> a ;
+    cout <<"Podaj znak : " <<endl ;
+    cin >> znak ;
     cout <<"Podaj liczbe b:" << endl ;
     cin >> b ; 
     if (znak == '+')
