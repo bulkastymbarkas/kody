@@ -8,13 +8,12 @@ int main(int argc, char **argv)
 {
     int m=0 ;
     int n=0 ;
-    int a=0 ;
     //cout << "Podaj zakres <m,n> :" << endl;
     //cin >> m >> n ;
     while (m > 10 || n < 99 ) {
         cout << "Podaj zakres <m,n > <10 ,99> : " << endl ; 
 	cin >> m >> n ;
-	cout <<" Liczby parzyste podzielne przez 3:" << a << endl ;
+	
 };
 
 
