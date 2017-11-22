@@ -20,7 +20,6 @@ int main(int argc, char **argv)
 	cin >> a;
 	cout << "Podaj liczbe naturalną: " << endl;
 	cin >> b;
-	// cout << "Największy wspólny dzielnik: " << nwd_v1(a, b) << endl;
 	printf("NWD(%d, %d) = %d", a, b, nwd_v1(a, b));
 	return 0;
 }
