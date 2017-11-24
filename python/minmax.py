@@ -28,6 +28,18 @@ def losuj(ile, zakres):
     return lista
 
 
+def minmax(lista):
+    lmin = []
+    lmax = []
+    i = 0
+    for i in range(int(len(lista) / 2)):
+        if lista[i] > lista[i + 1]:
+            lmin.append(lista[i+1])
+            lmax.append(lista[i])
+        else:
+            lim.append(lista[i])
+            lmax.append(lista[i+1])
+
 def main(args):
     ile = 20
     zakres = 50
