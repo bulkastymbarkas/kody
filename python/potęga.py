@@ -10,6 +10,12 @@ def potega_it(podst, wykladnik):
     for i in range(wykladnik):
         wynik *= podst
     return wynik
+# a0= 1 -warunek brzegowy
+# an = a(n -1) * a dla n > 0
+def potega_rek(a, n):
+    if n == 0:
+        return 1 
+    return potega_rek(a, n - 1) * a
 
 def main(args):
 #pobierz od użytkownika podstawe i wykładnik i przypisz do odpowiednich zmiennych
@@ -23,6 +29,7 @@ def main(args):
     assert potega_it(100,0)== 1
     assert potega_it(100,1)== 100
     assert potega_it(2,3)==8
+    assert potega_rek(2,3)==8
     return 0
 if __name__ == '__main__':
     import sys

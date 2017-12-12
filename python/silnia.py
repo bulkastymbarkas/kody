@@ -2,7 +2,13 @@
 # -*- coding: utf-8 -*-
 #n! = 1 dla {0, 1}
 # n! = 1*2 .... *n dla N+ - {0, 1}
-def silnia_it(a):
+
+def silnia_rek(n):
+    if n < 2:
+        return 1 
+    return silnia_rek(n - 1) * n
+
+def silnia_it(n):
     """Funkcja oblicza iteracyjnie silnie l.naturalnej"""
     wynik = 1
     for i in range(2,n+1):
@@ -13,10 +19,14 @@ def main(args):
 #pobierz od użytkownika podstawe i wykładnik i przypisz do odpowiednich zmiennych
     a = int(input("Podaj liczbe:"))
 
-    assert silnia_it(a)== int
+
+    assert type(a) == int 
     assert silnia_it(0)== 1
     assert silnia_it(1)== 1
     assert silnia_it(7)==5040
+    assert silnia_rek(7)==5040
+    print ("silnia = ", silnia_rek(a))
+    
     return 0
 if __name__ == '__main__':
     import sys

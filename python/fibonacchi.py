@@ -26,6 +26,11 @@ def fib_iter(n):
     return b
 
 
+def fib_rek(n):
+    if n == 1 :
+        return 1 
+    return fib_rek(
+
 def fib_iter2(n):
     a, b = (0, 1)
     print(a)
