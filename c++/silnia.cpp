@@ -9,6 +9,15 @@ int silnia (int liczba)
     return liczba*silnia(liczba-1);
 }
  
+ 
+ int silnia_rek(int n)
+{
+	if (n < 2)
+		return 1;
+	return n * silnia_rek(n - 1) ;
+}
+ 
+ 
 int main()
 {
     int s;
@@ -16,7 +25,7 @@ int main()
     cout << "podaj liczbe" << endl;
     cin >> s;
  
-    cout << silnia(s) << endl;
+    cout << "silnia: "<< silnia_rek(s) << endl;
  
     system("PAUSE");
     return(0);

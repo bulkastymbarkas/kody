@@ -1,17 +1,43 @@
+/*
+ * potega.cpp
+ * 
+ * a0 = 1
+ * a1 = a
+ * an = a * ... * a (n-czynników) dla n zaw. N+ - {1}
+ */
+
+
 #include <iostream>
-#include <conio.h>
-#include <math.h>
+
 using namespace std;
-int main()
+
+float potega_it(float x, int n)
 {
-    double liczba, potega;
-    cout << "Podaj liczbe: ";
-    cin >> liczba;
-    cout << "Do ktorej potegi podniesc liczbe " << liczba << "? Wpisz wartosc: ";
-    cin >> potega;
-    cout << "pow(" << liczba << "," << potega << ")=" << pow( liczba, potega ) << endl;
-    getch();
-    return( 0 );
+    float wynik = 1;
+    for (int i = 1; i <= n; i++)
+    {
+        wynik = wynik * x;
+    }
+    return wynik;
 }
 
+int potega_rek(int x, int n)
+{    
+    if (x == 0)
+        return 0;
+    else if (n == 0)
+        return 1;
+    return potega_rek(x, n - 1) * x;
+}
 
+int main(int argc, char **argv)
+{
+    int n;
+    float x;
+    cout << "Podaj podstawe potęgi: " << endl;
+    cin >> x;
+    cout << "Podaj wykładnik potęgi: " << endl;
+    cin >> n;
+    cout << "Potęga: " << potega_rek(x, n) <<endl;
+	return 0;
+}
