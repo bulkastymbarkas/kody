@@ -40,9 +40,14 @@ def fib_iter2(n):
         n = n - 1
 
 
+def fib_rek(n):
+    if n < 2:
+        return 1
+    return fib_rek(n - 1) + fib_rek(n - 2)
+
+
 def main(args):
     fib_iter2(10)
-
     return 0
 
 

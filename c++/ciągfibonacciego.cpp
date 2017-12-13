@@ -1,28 +1,43 @@
-#include<iostream>
-#include<cstdlib>
+/*
+ * ciag_fibonacciego.cpp
+ */
+
+
+#include <iostream>
+
 using namespace std;
- 
-void fibonacci(int n)
-{    
-     long long a = 0, b = 1;
- 
-     for(int i=0;i<n;i++)
-     {
-            cout<<b<<" ";
-            b += a; 
-            a = b-a; 
-     }     
-}
- 
-int main()
+
+int fib_iter(int n)
 {
-    int n;
- 
-    cout<<"Podaj ile chcesz wypisać wyrazów ciągu fibonacciego: ";
-    cin>>n;
- 
-    fibonacci(n);
- 
-    system("pause");
-    return 0;
+	if ( n == 0)
+		return 0;
+	else if ( n == 1)
+		return 1;
+	int a = 0;
+	int b = 1;
+	int tmp;
+	cout << a << endl;
+	for (int i = 1 ; i < n; i++) 
+	{	tmp = b;
+		b = a + b;
+		a = tmp;
+	}
+    cout << a << " " << b << " " << b / a << endl;
+    return b;
+}
+
+int fib_rek(int n)
+{    
+	if (n < 2)
+        return 1;
+    return fib_rek(n - 1) + fib_rek(n - 2);
+}
+
+int main(int argc, char **argv)
+{
+	int n;
+	cout << "Numer wyrazu ciągu: " << endl;
+	cin >> n;
+	printf("Wyraz %d = %d", n, fib_rek(n));	
+	return 0;
 }
